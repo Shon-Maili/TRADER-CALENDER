@@ -1,0 +1,15 @@
+body {
+    display:flex;
+    flex-direction: row;
+    height:100vh;
+    /*
+    position:relative;
+    left:50px;
+    */ 
+    background-color:#192b3f; 
+    overflow: hidden;
+
+  }
+
+
+  

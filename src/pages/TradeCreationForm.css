@@ -1,0 +1,14 @@
+#TradeCreationFormPage{
+    margin-left: 50px;
+    width: calc(100%-50px);
+    
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+#main {
+    color:white;
+    font-family: 'Poppins', sans-serif;
+   }

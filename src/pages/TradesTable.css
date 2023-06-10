@@ -1,0 +1,16 @@
+#TradesTablePage {
+        margin-left: 50px;
+        width: calc(100%-50px);
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        color:white;
+        font-family: 'Poppins', sans-serif;
+}
+      
+#helloHeader{
+        top: -5px;
+        left: 76px;
+        position: absolute;
+}
+
