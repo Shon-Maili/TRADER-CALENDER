@@ -1,12 +1,11 @@
 import "./About.css"
 import React from "react"
 
+
 export default function About(props) {
-console.log(props.FormData)
 
-function prevent() {
 
-}
+
     return(
         <div id="AboutPage">
         <form className="form" onSubmit={props.handleFormSubmit}>

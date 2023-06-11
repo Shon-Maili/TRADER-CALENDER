@@ -6,19 +6,10 @@ import React from "react"
 export default function TradesTable(props) {
     
 
-   let accountData;
+   let accountData= JSON.parse(localStorage.getItem("user"));
    
-   if (props.submittedData === "new") {
-    const storedUsersData = localStorage.getItem("usersData");
-    const usersDataArray = storedUsersData ? JSON.parse(storedUsersData) : [];
-    accountData = usersDataArray[usersDataArray.length - 1];
-  } else {
-    const storedUsersData = localStorage.getItem("usersData");
-    const usersDataArray = storedUsersData ? JSON.parse(storedUsersData) : [];
-    accountData = usersDataArray.find((item) => item.id === props.submittedData);
-  }
 
-    console.log(accountData);
+   
 
     return(
        
@@ -32,4 +23,3 @@ export default function TradesTable(props) {
     )
 }
 
-// {props.FormData.firstName && props.FormData.lastName ? `Hello, ${props.FormData.firstName} ${props.FormData.lastName}!`: "Hello!"}

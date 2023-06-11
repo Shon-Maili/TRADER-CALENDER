@@ -6,7 +6,7 @@ import About from "./pages/About"
 import { Routes,Route } from 'react-router-dom';
 import SideBar from './SideBar/SideBar';
 import {v4 as uuidv4} from "uuid"
-import usersData from './usersData';
+
 
 
 function App() {
@@ -18,7 +18,14 @@ function App() {
 
 })
 
-const [submittedData, setSubmittedData] = React.useState(null);
+
+
+React.useEffect(()=> {
+
+  setFormData(JSON.parse(localStorage.getItem("user")));
+
+},[]);
+
 
 
 
@@ -32,7 +39,8 @@ function handleChange(event) {
     })
 }
 
-function handleSubmit(event) {
+function handleSubmit(event) 
+{
   event.preventDefault();
   console.log("clicked");
  
@@ -43,21 +51,13 @@ function handleSubmit(event) {
     desc:FormData.desc
   }
  
-  
-  const isExist = usersData.find((data) => data.firstName === item.firstName && data.lastName === item.lastName);
-
-  if (isExist) 
-  {
-    setSubmittedData(isExist.id);
-  }
-  else
-  {
-     usersData.push(item);
-     setSubmittedData("new");
-  }
+   localStorage.clear();
+   localStorage.setItem("user" , JSON.stringify(item));
 }
+  
 
-function handleFormSubmit(event) {
+function handleFormSubmit(event)
+{
   event.preventDefault();
   handleSubmit(event);
  
@@ -67,7 +67,7 @@ function handleFormSubmit(event) {
     <>
      <SideBar />
     <Routes>
-      <Route path="/" element={<TradesTable FormData={FormData} submittedData={submittedData} />} />
+      <Route path="/" element={<TradesTable FormData={FormData} />} />
       <Route path="/TradeCreationForm" element={<TradeCreationForm />} />
       <Route path="/About" element={<About FormData={FormData} handleChange={handleChange} handleFormSubmit={handleFormSubmit} />} />
     </Routes>
