@@ -115,6 +115,13 @@ input:focus , textarea:focus {
 
 }
 
+#uploadPhoto {
+    position: absolute;
+    border: none;
+    width: 245px;
+    height: 240px;
+    bottom: 348px;
+}
 
 
 
