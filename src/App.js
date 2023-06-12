@@ -51,7 +51,7 @@ function handleSubmit(event)
     desc:FormData.desc
   }
  
-   localStorage.clear();
+   
    localStorage.setItem("user" , JSON.stringify(item));
 }
   
@@ -62,6 +62,16 @@ function handleFormSubmit(event)
   handleSubmit(event);
  
 }
+
+/*
+function handleFileChange(event) {
+  const selectedFile = event.target.files[0];
+  // Handle the selected file here
+  console.log('File selected:', selectedFile);
+
+};
+ 
+*/
 
   return (
     <>

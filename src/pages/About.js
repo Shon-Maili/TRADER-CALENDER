@@ -1,24 +1,45 @@
 import "./About.css"
 import React from "react"
-import UploadAvatar from "./avatar/UploadAvatar";
+
 
 export default function About(props) {
-    
-    function handleFileChange(event) {
-      const selectedFile = event.target.files[0];
-      // Handle the selected file here
-      console.log('File selected:', selectedFile);
-     
-    };
+
+   const [selectedPhoto, setSelectedPhoto] = React.useState("");
+
+   React.useEffect(() => {
+    const savedPhoto = localStorage.getItem("avatarPhoto");
+    if (savedPhoto) {
+      setSelectedPhoto(savedPhoto);
+    }
+  }, []);
+
+   function handlePhotoChange(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const photoDataUrl = e.target.result;
+        setSelectedPhoto(photoDataUrl);
+        localStorage.setItem("avatarPhoto", photoDataUrl)
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+
+   
   
     return(
         <div id="AboutPage">
         <form className="form" onSubmit={props.handleFormSubmit}>
         <label htmlFor="fileInput" id="customFileLabel">
-            <img className="avatarLogo" src="./images/avatarPage.png" alt=""/>
+            <div className="avatarContainer">
+            {selectedPhoto ? <img className="avatarLogo1" src={selectedPhoto} alt="avatarLogo"/>
+            : <img className="avatarLogo" src="./images/avatarPage.png" alt="avatarLogo"/> }
+            </div>
             </label>
-            <input  type="file" id="fileInput" style={{ display: 'none' }} onChange={handleFileChange} />
-            
+            <input  type="file" id="fileInput" style={{ display: 'none' }} onChange={handlePhotoChange} />
+           
             <div className="inputsFields">
             <div className="group">
             
@@ -36,3 +57,10 @@ export default function About(props) {
     )
        
     }
+
+   
+   
+   
+   
+   
+    //<img className="avatarLogo" src="./images/avatarPage.png" alt=""/>
