@@ -1,14 +1,404 @@
 #TradeCreationFormPage{
     margin-left: 50px;
     width: calc(100%-50px);
-    
     display: flex;
-    align-items: center;
-    height: 100vh;
     
-}
-
-#main {
+    height: 100vh;
     color:white;
     font-family: 'Poppins', sans-serif;
-   }
+}
+
+
+
+   #header{
+        top: -5px;
+        left: 76px;
+        position: absolute;
+        opacity:0;
+        animation: header 1s ease-out both;
+     }
+
+     .group {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #142334;
+        border-radius: 13px;
+     }
+
+
+     .box1 {
+        top: 96px;
+        left: 88px;
+        opacity:0;
+        animation: group1 1s ease-out 0.5s both;
+     }
+
+     .box1 label {
+        padding: 12px 4px;
+        margin-left:7px;
+        margin-right:7px;
+        z-index: 1;
+     }
+     
+
+    #tradeEntryDate {
+      margin-left: 6px;
+      width: 118px;
+  }
+    
+
+  #tradeExitDate {
+    margin-left: 8px;
+  }
+
+  .box2{
+    width:227px;
+    top:209px;
+    left:88px;
+    opacity:0;
+  animation: group2 1s ease-out 1s both;
+  }
+
+  .box2 label {
+    padding: 13px 10px;
+  }
+
+  .box2 input , .box2 select {
+    margin-left:8px;
+  }
+
+  .box2 #stockTicker{
+    width:64px;
+  }
+
+  .box3 label[for="reasonForEntry"] {
+    display:flex;
+    flex-direction: column;
+    padding-top:0;
+  }
+
+  .box3 label {
+    padding:13px 10px;
+  }
+
+  .box3 textarea {
+    padding: 0 10px;
+    width:351px;
+    border:none;
+  }
+  .box3 textarea:focus {
+    outline: none;
+  }
+
+  .box3 {
+    left:88px;
+    width:394px;
+    top:324px;
+    height:241px;
+    opacity:0;
+    animation: group3 1s ease-out 1.3s both;
+  }
+  
+  .box3 textarea {
+    margin-bottom: 0;
+    height:146px;
+  }
+
+  .box3 input {
+    margin-left: 8px;
+  }
+
+  #enteriesInputs {
+    display: flex;
+  }
+
+  #enteriesInputs input {
+    width:63px;
+  }
+  
+
+
+  .box4 {
+    left:494px;
+    width:628px;
+    height:241px;
+    display: flex;
+    flex-direction: column;
+    height:241px;
+    opacity:0;
+    animation: group3 1s ease-out 1.5s both;
+
+  }
+
+  #exitInputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+  }
+
+  #column1{
+   display: flex;
+   width:600px;
+   flex-direction: column;
+  }
+
+  #column2 {
+    display: flex;
+    width:483px;
+  }
+
+
+
+  .box4 label[for="reasonForExit"] {
+    display:flex;
+    flex-direction: column;
+    padding-top:0;
+  }
+
+  .box4 label {
+    padding:13px 10px;
+    white-space: pre;
+  }
+
+  .box4 textarea {
+    padding: 0 10px;
+    width:351px;
+    margin-bottom: 0;
+    width: 585px;
+    height: 95px;
+    border: none;
+}
+
+.box4 textarea:focus {
+  outline:none;
+  
+}
+  
+
+
+  .box4 input {
+    margin-left: 8px;
+    width:63px;
+  }
+
+  label[for="positionSize2"] input {
+    height: 18px;
+  }
+
+  .box5 {
+    left: 324px;
+    height: 99px;
+    width: 223px;
+    top: 96px;
+    opacity:0;
+    animation: group1 1s ease-out 0.5s both;
+ }
+
+ .box5 label {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+ }
+
+ .box5 textarea {
+  width: 203px;
+    height: 50px;
+    left: -4px;
+    position: relative;
+    border:none;
+ }
+ 
+ .box5 textarea:focus {
+  outline:none;
+  
+}
+
+ .box6{
+  width:227px;
+  top:209px;
+  left: 324px;
+  height: 99px;
+  opacity:0;
+  animation: group2 1s ease-out 1s both;
+}
+
+.box6 label {
+  padding: 13px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 71px;
+    width: 209px;
+}
+
+
+.box6 img {
+  position: relative;
+    left: 86px;
+    width: 136px;
+    bottom: 39px;
+}
+
+.box7{
+  left: 560px;
+    height: 214px;
+    width: 560px;
+    top: 96px;
+    opacity:0;
+    animation: group1 1s ease-out 0.75s both;
+}
+
+.box7 label {
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box7 textarea {
+  width: 529px;
+  height: 50px;
+  left: -4px;
+  position: relative;
+  margin-left: 6px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  border: none;
+}
+
+.box7 textarea:focus {
+  outline:none;
+  
+}
+
+@keyframes header {
+  from {opcity:0;left:52px;}
+  to {opacity:1;left:76px;}
+}
+
+@keyframes group1 {
+  from {opcity:0;top:96px;}
+  to {opacity:1;top:82px;}
+}
+@keyframes group2 {
+  from {opcity:0;top:209px;}
+  to {opacity:1;top:197px;}
+}
+@keyframes group3 {
+  from {opcity:0;top:324px;}
+  to {opacity:1;top:311px;}
+}
+
+
+
+textarea::placeholder{
+  color:white;
+}
+
+#TradeCreationFormPage button {
+  background-color: transparent;
+  outline: none;
+  color: white;
+  border: 2px solid white;
+  border-radius: 13px;
+  width: 71px;
+  font-family: 'Poppins', sans-serif;
+  top: 27px;
+  right: 30px;
+  position: absolute;
+  font-weight:normal;
+  transition: background-color 0.3s , color 0.3s ,font-weight 0.3s;
+}
+
+#TradeCreationFormPage button:hover{
+  background-color: white;
+  color:#192b3f;
+  font-weight:bolder;
+  
+}
+
+#TradeCreationFormPage input {
+  background-color: transparent;
+  color:white;
+  box-shadow: none;
+  border-bottom: solid 2px white;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+}
+
+#listOfExitPrices{
+  width:191px;
+}
+
+#listOfExitExercises{
+  width:216px;
+}
+
+#bubble1{
+  position: absolute;
+    font-size: 11px;
+    top: -12px;
+    left: 386px;
+    padding: 7px 7px;
+    border-radius: 12px;
+}
+/*
+#bubble1::before{
+  content: "";
+  position: absolute;
+  right: 97%;
+  top: 13px;
+  width: 0;
+  height: 0;
+  border-top: 27px solid transparent;
+  border-right: 21px solid black;
+  rotate: 25px;
+  transform: rotate(234deg);
+  opacity:0;
+
+}
+*/
+
+input:focus , select:focus{
+  border: none;
+  outline: none;
+}
+
+select{
+  background-color:#142334;
+  color: white;
+  border: none;
+}
+
+select * {
+  border:none;
+}
+
+input[type="date"] {
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  
+}
+
+.box1 img {
+  width: 14px;
+  z-index: 0;
+}
+
+#calender1 {
+  position: absolute;
+  right: 12px;
+  top: 19px;
+}
+#calender2{
+  top: 68px;
+  position: absolute;
+  right: 15px;
+}
+
+
+
+

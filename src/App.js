@@ -22,8 +22,11 @@ function App() {
 
 React.useEffect(()=> {
 
-  setFormData(JSON.parse(localStorage.getItem("user")));
-
+  const user= JSON.parse(localStorage.getItem("user"));
+  if(user!==null)
+  {
+  setFormData(user);
+  }
 },[]);
 
 

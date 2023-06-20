@@ -41,11 +41,11 @@ export default function About(props) {
             <input  type="file" id="fileInput" style={{ display: 'none' }} onChange={handlePhotoChange} />
            
             <div className="inputsFields">
-            <div className="group">
+            <div className="inputField">
             
             <input type="text" placeholder="first name" name="firstName" value={props.FormData.firstName} onChange={props.handleChange} />
             </div>
-            <div className="group">
+            <div className="inputField">
            
             <input type="text" placeholder="last name" name="lastName" value={props.FormData.lastName} onChange={props.handleChange} />
             </div>
