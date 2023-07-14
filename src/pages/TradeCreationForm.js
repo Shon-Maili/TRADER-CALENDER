@@ -1,5 +1,12 @@
 import "./TradeCreationForm.css"
 import React from "react"
+import Page6 from "./slider/Page6";
+import Page5 from "./slider/Page5";
+import Page4 from "./slider/Page4";
+import Page3 from "./slider/Page3";
+import Page2 from "./slider/Page2";
+import Page1 from "./slider/Page1";
+
 
 export default function TradeCreationForm() {
 
@@ -79,7 +86,20 @@ export default function TradeCreationForm() {
 
     
     return (
-         <div id="TradeCreationFormPage">
+      <>
+       <Page1 />
+       <Page2 />
+       <Page3 />
+       <Page4 />
+       <Page5 />
+       <Page6 />
+       </>
+    )
+
+}
+
+{/* 
+     <div id="TradeCreationFormPage">
         <h1 id="header">Add trade</h1> 
         <form onSubmit={handleTradeSubmit}>
         
@@ -202,10 +222,5 @@ export default function TradeCreationForm() {
          
         </form>
         </div>
-        
-    )
-}
-
-{/* 
-         
+             
       */}
