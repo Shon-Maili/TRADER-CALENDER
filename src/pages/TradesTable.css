@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 #TradesTablePage {
         margin-left: 50px;
         width: calc(100%-50px);
@@ -14,3 +19,197 @@
         position: absolute;
 }
 
+#tableWrapper{
+ 
+  overflow-x: auto;
+  position: relative;
+  top: 15px;
+  height: 467px;
+ 
+  left: 15px;
+  width:1184px;
+  background-color:#142334;
+  box-shadow:-2px 0 20px #303065;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+       width: 3px;
+       height: 3px;
+     }
+     
+     /* Track */
+     ::-webkit-scrollbar-track {
+       background: transparente; 
+     }
+      
+     /* Handle */
+     ::-webkit-scrollbar-thumb {
+       background:white; 
+     }
+     
+     
+    
+
+
+ table {
+   
+    
+    border-collapse: collapse;
+    background-color:#142334;
+    
+}
+
+ td {
+       padding:2px;
+      /* padding:5px 12px;*/
+       text-align: center;
+       vertical-align: center;
+       font-size:13px;
+
+}
+
+td:not(.bigText) {
+        /*line-height: 0;*/
+      }
+
+
+
+
+
+ th {
+        height:5px !important;
+        margin:30px;
+        line-height: 18px;
+        white-space: nowrap;  
+        text-align: center;    
+        font-size:14px;  
+        padding-left:12px;
+        padding-right:12px;
+        padding-top:14px;
+        
+ }
+ /* padding:17px 12px; */
+
+ 
+
+ #compNameTH{
+        padding:0 91px;
+        padding-top:13px;
+ }
+
+ #reasonForEntryTH , #reasonForExitTH {
+        padding: 0 79px;
+        padding-top:13px;
+ }
+ #againTH , #summaryTH{
+       padding: 0 17px;
+       position:relative;
+       top:7px;
+ }
+ 
+ #delete{
+        padding:0 27px;
+ }
+
+ td > button{
+        background-color: #0f1e2b;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        position:relative;
+        right:3px;
+        top :5px;
+        width:35px;
+        
+ }
+
+button > #garbageimg {
+        padding: 5px 1px;
+        width:20px;
+        height: 20px;
+ }
+ 
+button > #eyeimg {
+       padding: 1px 0px;
+       width: 25px;
+       height: 26px;
+       position: relative;
+       left: -1px;
+       top: 1px;
+}
+
+
+     
+    
+
+ .bigText{
+        overflow-y: scroll;
+        word-wrap: break-word;
+        overflow-wrap: break-word; 
+        height:44px;
+        max-height: 60px;
+        word-wrap: break;
+        line-height:1;
+        position: relative;
+        bottom:-9px;
+        left:2px;
+        max-width: 303px;
+}
+
+
+
+
+.bigText td {
+        padding: 0 12px;
+}
+
+td div {
+  padding-right: 3px;
+}
+
+#fundumentalsTH{
+        padding: 0 76px;
+        position:relative;
+        top:6px;
+}
+
+
+ .scroller{
+        max-width: 303px !important;
+ }
+
+ .LONG {
+       color: #307bc3;
+    width: 62px;
+    padding-left: 5px;
+    text-align: center;
+    position: relative;
+    background-color: #202f68;
+    border-radius: 5px;
+    left: 33px;
+    font-weight: bold;
+
+ }
+
+ .SHORT {
+     color:#be2525; 
+     width: 63px;
+     padding-left: 5px;
+     text-align: center;
+     position: relative;
+     background-color: #4d2525;
+     border-radius: 5px;
+     left: 33px;
+     font-weight: bold;
+ }
+ 
+ .positive {
+       color:#7bf787;
+
+   }
+.negative{
+   color:#be2525;
+
+}
+ /*#24AA31*/

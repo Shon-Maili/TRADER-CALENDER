@@ -1,12 +1,12 @@
 import "./TradeCreationForm.css"
 import React from "react"
+import {v4 as uuidv4} from "uuid"
 
 export default function TradeCreationForm() {
 
    
    const [selectedSnap,setSelectedSnap] = React.useState("");
   
-
   
    const [formData1, setformData1] = React.useState({
       tradeEntryDate:"",
@@ -57,7 +57,6 @@ export default function TradeCreationForm() {
    }
    
  function handleTradeSubmit(event) {
-   event.preventDefault();
    console.log("clicked");
    (async () => {
       try {
@@ -65,11 +64,23 @@ export default function TradeCreationForm() {
         const jsonData = await response.json();
         console.log(jsonData.results[0].name);
         const tradeFormContent = {
+         tradeUUID:uuidv4(),
          ...formData1,
          snapshot:selectedSnap,
          compName:jsonData.results[0].name
       }
-      console.log(tradeFormContent);
+      console.log(tradeFormContent.tradeUUID);
+       console.log(JSON.stringify(tradeFormContent));
+      const postResponse = await fetch("http://localhost:5000/addTrade", {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({ tradeFormContent }),
+       });
+       
+        
+      //console.log(tradeFormContent);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -87,7 +98,7 @@ export default function TradeCreationForm() {
         <label htmlFor="tradeEntryDate">
             Entry date 
          <input type="date" id="tradeEntryDate" name="tradeEntryDate" 
-                value={formData1.tradeEntryDate}  onChange={handleChange} />
+                value={formData1.tradeEntryDate}  onChange={handleChange}/>  
          </label>
          <img id="calender1" src="./images/calender.png" />
          <label htmlFor="tradeExitDate">
@@ -142,17 +153,19 @@ export default function TradeCreationForm() {
         <div id="exitInputs">
         <div id="column1">
          
-         <p id="bubble1">*each input data separated by a comma</p>
+         
         <label htmlFor="listOfExitPrices">
               exit prices
          <input type="text" id="listOfExitPrices" name="listOfExitPrices"
-                value={formData1.listOfExitPrices} onChange={handleChange} width="191px" />
+                value={formData1.listOfExitPrices} onChange={handleChange} width="191px" pattern="^(?:\d+(?:\.\d+)?(?:,|$)){0,2}\d+(?:\.\d+)?$"
+                 title="Please enter numbers separated by commas. Max of 3 values"/>
          </label>
          
          <label htmlFor="listOfExitExercises">
               amounts of shares exercise 
          <input type="text" id="listOfExitExercises" step="100" name="listOfExitExercises" 
-                value={formData1.listOfExitExercises} onChange={handleChange} width="216px" />
+                value={formData1.listOfExitExercises} onChange={handleChange} width="216px" pattern="^(?:\d+(?:,|$)){0,2}\d+$"
+                 title="Please enter numbers separated by commas. Max of 3 values"/>
          </label>
          </div>
          </div>
